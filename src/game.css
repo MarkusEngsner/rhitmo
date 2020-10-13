@@ -1,6 +1,24 @@
 .board {
-    background-image: url("../brown.svg");
     width: 800px;
     height: 400px;
-    background-size: 100% 100%;
+
+    display: grid;
+    grid-gap: 0 0;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+}
+
+
+#header-bar {
+    width: 100vw;
+    height: 200px;
+    background-color: blanchedalmond;
+}
+
+.primary-square {
+    background: #f0d9b5
+}
+
+.secondary-square {
+    background: #b58863
 }

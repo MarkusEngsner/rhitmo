@@ -89,6 +89,15 @@ object BoardConfigurations {
     sortedVec map { case (i, s) => s }
   }
 
+
+  def getDefaultBoard: Board = {
+    val vec = constructBoard(firstPlayerMappings, secondPlayerMappings)
+    val placements = new Placements(16, 8, vec, EmptySquare)
+    new Board(placements)
+  }
+
+  def getDefaultGameState: GameState = GameState(getDefaultBoard, Player.first)
+
   //  val DefaultPlacements: Placements = new Placements(16, 8, Vector[Square](
   //    EmptySquare, EmptySquare, Populated(Square(289)),
   //  ), EmptySquare)

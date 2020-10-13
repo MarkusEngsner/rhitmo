@@ -1,14 +1,30 @@
-package tutorial.webapp
+package controller
 
+import game.{Circle, Piece}
 import org.scalajs.dom
 import org.scalajs.dom.document
-import game.{Circle, Piece, Triangle, PSquare}
-import scala.scalajs.js.annotation.JSExportTopLevel
+import view.BoardView
 
-object TutorialApp {
+object App {
+
   def main(args: Array[String]): Unit = {
+    val state = game.BoardConfigurations.getDefaultGameState
+    val boardElement = document.createElement("div")
+    boardElement.classList.add("board")
+    boardElement.id = "main-board"
+    document.getElementById("main-area").appendChild(boardElement)
     setupUI()
+//    val boardElement = document.getElementById("main-board")
+    println(boardElement)
+    val view = BoardView(boardElement, state)
+    view.setup()
+    println("Main almost done")
+    val x = document.getElementById("main-board")
+    println(x)
   }
+
+
+
 
   def setupUI(): Unit = {
     val button = document.createElement("button")
@@ -57,6 +73,8 @@ object TutorialApp {
         svg.appendChild(text)
       }
     }
+    val x = document.getElementById("main-board")
+    println(x)
     document.getElementById("main-board").appendChild(svg)
   }
 

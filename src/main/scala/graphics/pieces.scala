@@ -1,5 +1,0 @@
-package graphics
-
-object GraphicsConversion {
-
-}
