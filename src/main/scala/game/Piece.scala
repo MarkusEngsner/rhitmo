@@ -8,4 +8,4 @@ case class Triangle(n: Int) extends Piece
 
 case class Circle(n: Int) extends Piece
 
-case class Square(n: Int) extends Piece
+case class PSquare(n: Int) extends Piece

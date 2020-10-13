@@ -1,6 +1,7 @@
 package game
 
-import game.Piece
+import game.{Piece, PSquare, Circle, Triangle}
+import utils.FixedVector2D
 
 
 class Board(val width: Int, val height: Int, placements: Placements) {
@@ -19,8 +20,8 @@ class Board(val width: Int, val height: Int, placements: Placements) {
     new Board(newPlacements)
   }
 
-  def addPiece(x: Int, y: Int, piece: Piece): Board = {
-    addPiece(x, y, Populated(piece))
+  def addPiece(x: Int, y: Int, piece: Piece, player: Player.Player): Board = {
+    addPiece(x, y, Populated(piece, player))
   }
 
 
@@ -29,7 +30,7 @@ class Board(val width: Int, val height: Int, placements: Placements) {
     val square = placements(x, y)
     square match {
       case EmptySquare => this // TODO: add failure/exception or something here
-      case Populated(_) => addPiece(x, y, EmptySquare)
+      case Populated(_, _) => addPiece(x, y, EmptySquare)
     }
   }
 
@@ -37,7 +38,58 @@ class Board(val width: Int, val height: Int, placements: Placements) {
   // TODO: add move validation, removing pieces that are hit
   def movePiece(x0: Int, y0: Int, x1: Int, y1: Int): Board = {
     val piece = placements(x0, y0)
-    removePiece(x0, y0) addPiece(x1, y1, piece)
+    removePiece(x0, y0).addPiece(x1, y1, piece)
   }
 
+}
+
+
+object BoardConfigurations {
+  type PieceMap = Map[(Int, Int), Piece]
+
+  val firstPlayerMappings: PieceMap = Map(
+    (2, 0) -> PSquare(289),
+    (2, 1) -> PSquare(169),
+    (3, 0) -> PSquare(153),
+    (4, 0) -> Triangle(81),
+  )
+
+  val secondPlayerMappings: PieceMap = Map(
+    (13, 0) -> PSquare(49),
+    (12, 0) -> PSquare(28),
+  )
+
+
+  def mergeMappings(map1: PieceMap, map2: PieceMap): Map[(Int, Int), Square] = {
+    def pieceToPopulated(player: Player.Player)(index: (Int, Int), p: Piece): Square =
+      Populated(p, player)
+
+    val squareMap1 = map1 transform pieceToPopulated(Player.first)
+    val squareMap2 = map2 transform pieceToPopulated(Player.second)
+    squareMap1 ++ squareMap2
+  }
+
+  def emptyMapping(width: Int, height: Int): Map[Int, Square] =
+    Map((for {
+      i <- 0 to height * width
+    } yield (i, EmptySquare)): _*)
+
+
+  def flattenMapping(w: Int, h: Int)(p: ((Int, Int), Square)) = p match {
+    case ((x: Int, y: Int), s) => (x * w + y, s)
+  }
+
+  def constructBoard(map1: PieceMap, map2: PieceMap): Vector[Square] = {
+    val width = 16
+    val height = 8
+    val mMap = mergeMappings(map1, map2)
+    val fMap = mMap map flattenMapping(width, height)
+    val filledMap = emptyMapping(width, height) ++ fMap
+    val sortedVec = filledMap.toVector.sortWith { case ((lhs, rhs)) => lhs._1 < rhs._1 }
+    sortedVec map { case (i, s) => s }
+  }
+
+  //  val DefaultPlacements: Placements = new Placements(16, 8, Vector[Square](
+  //    EmptySquare, EmptySquare, Populated(Square(289)),
+  //  ), EmptySquare)
 }

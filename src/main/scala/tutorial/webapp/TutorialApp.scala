@@ -2,7 +2,7 @@ package tutorial.webapp
 
 import org.scalajs.dom
 import org.scalajs.dom.document
-import game.{Circle, Piece, Triangle, Square}
+import game.{Circle, Piece, Triangle, PSquare}
 import scala.scalajs.js.annotation.JSExportTopLevel
 
 object TutorialApp {
