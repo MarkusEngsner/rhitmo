@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 16 8"
+   version="1.1"
+   id="svg3795"
+   sodipodi:docname="brown-rhitmo.svg"
+   width="16"
+   height="8"
+   style="shape-rendering:crispEdges"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata3801">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3799" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1412"
+     id="namedview3797"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="52.281708"
+     inkscape:cx="5.8263827"
+     inkscape:cy="0.92304642"
+     inkscape:window-x="1080"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3795" />
+  <g
+     id="a">
+    <g
+       id="b">
+      <g
+         id="c">
+        <g
+           id="d">
+          <rect
+             width="1"
+             height="1"
+             id="e"
+             x="0"
+             y="0"
+             style="fill:#f0d9b5" />
+          <use
+             x="1"
+             y="1"
+             href="#e"
+             xlink:href="#e"
+             id="use3778"
+             width="100%"
+             height="100%" />
+          <rect
+             y="1"
+             width="1"
+             height="1"
+             id="f"
+             x="0"
+             style="fill:#b58863" />
+          <use
+             x="1"
+             y="-1"
+             href="#f"
+             xlink:href="#f"
+             id="use3781"
+             width="100%"
+             height="100%" />
+        </g>
+        <use
+           x="2"
+           href="#d"
+           xlink:href="#d"
+           id="use3784"
+           y="0"
+           width="100%"
+           height="100%" />
+      </g>
+      <use
+         x="4"
+         href="#c"
+         xlink:href="#c"
+         id="use3787"
+         y="0"
+         width="100%"
+         height="100%" />
+    </g>
+    <use
+       y="2"
+       href="#b"
+       xlink:href="#b"
+       id="use3790"
+       x="0"
+       width="100%"
+       height="100%" />
+  </g>
+  <use
+     y="4"
+     href="#a"
+     xlink:href="#a"
+     id="use3793"
+     x="0"
+     width="100%"
+     height="100%" />
+  <g
+     id="a-7"
+     transform="translate(8)">
+    <g
+       id="b-0">
+      <g
+         id="c-9">
+        <g
+           id="d-3">
+          <rect
+             style="fill:#f0d9b5"
+             y="0"
+             x="0"
+             width="1"
+             height="1"
+             id="e-6" />
+          <use
+             height="100%"
+             width="100%"
+             x="1"
+             y="1"
+             href="#e"
+             xlink:href="#e-6"
+             id="use3778-0" />
+          <rect
+             style="fill:#b58863"
+             x="0"
+             y="1"
+             width="1"
+             height="1"
+             id="f-6" />
+          <use
+             height="100%"
+             width="100%"
+             x="1"
+             y="-1"
+             href="#f"
+             xlink:href="#f-6"
+             id="use3781-2" />
+        </g>
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="2"
+           href="#d"
+           xlink:href="#d-3"
+           id="use3784-6" />
+      </g>
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="4"
+         href="#c"
+         xlink:href="#c-9"
+         id="use3787-1" />
+    </g>
+    <use
+       height="100%"
+       width="100%"
+       x="0"
+       y="2"
+       href="#b"
+       xlink:href="#b-0"
+       id="use3790-8" />
+  </g>
+  <use
+     style="shape-rendering:crispEdges"
+     y="4"
+     href="#a"
+     xlink:href="#a"
+     id="use3793-3"
+     x="0"
+     width="100%"
+     height="100%"
+     transform="translate(8)" />
+</svg>

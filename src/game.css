@@ -1,0 +1,6 @@
+.board {
+    background-image: url("../brown.svg");
+    width: 800px;
+    height: 400px;
+    background-size: 100% 100%;
+}
