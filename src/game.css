@@ -22,3 +22,10 @@
 .secondary-square {
     background: #b58863
 }
+
+.game-piece > text {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

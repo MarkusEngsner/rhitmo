@@ -4,7 +4,7 @@ import game.{Piece, PSquare, Circle, Triangle}
 import utils.FixedVector2D
 
 
-class Board(val width: Int, val height: Int, placements: Placements) {
+class Board(val width: Int, val height: Int, val placements: Placements) {
 
 
   def this(width: Int, height: Int) {
@@ -41,22 +41,32 @@ class Board(val width: Int, val height: Int, placements: Placements) {
     removePiece(x0, y0).addPiece(x1, y1, piece)
   }
 
+  // Note: due to type erasure, we will for now have to deal with returning a map
+  // of type square, and not Populated. Could be solved by putting the piece owner
+  // into the piece data.
+  def getPieceMap: Map[(Int, Int), Square] = for {
+    (index, sq) <- placements.to2DMap
+    if (sq match {
+      case Populated(_, _) => true
+      case _ => false
+    })
+  } yield (index, sq)
 }
 
 
 object BoardConfigurations {
-  type PieceMap = Map[(Int, Int), Piece]
 
   val firstPlayerMappings: PieceMap = Map(
-    (2, 0) -> PSquare(289),
-    (2, 1) -> PSquare(169),
-    (3, 0) -> PSquare(153),
-    (4, 0) -> Triangle(81),
+    (0, 2) -> PSquare(289),
+    (1, 2) -> PSquare(169),
+    (0, 3) -> PSquare(153),
+    (0, 4) -> Triangle(81),
   )
 
   val secondPlayerMappings: PieceMap = Map(
-    (13, 0) -> PSquare(49),
-    (12, 0) -> PSquare(28),
+    (0, 13) -> PSquare(49),
+    (0, 12) -> PSquare(28),
+    (3, 5) -> Circle(10), // not a correct placement!
   )
 
 

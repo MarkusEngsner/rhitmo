@@ -16,4 +16,12 @@ class FixedVector2D[+A](val width: Int, val height: Int,
   def indexOf(x: Int, y: Int): Int = x * width + y
 
   def apply(x: Int, y: Int): A = v(indexOf(x, y))
+
+
+  def to2DMap: Map[(Int, Int), A] =
+    Map((for {
+      (a, z) <- v.zipWithIndex
+      x: Int = z / width
+      y: Int = z % width
+    } yield ((x, y), a)): _*)
 }

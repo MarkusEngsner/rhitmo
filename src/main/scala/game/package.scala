@@ -15,5 +15,6 @@ package object game {
   case object EmptySquare extends Square
 
   type Placements = FixedVector2D[Square]
+  type PieceMap = Map[(Int, Int), Piece]
 
 }
